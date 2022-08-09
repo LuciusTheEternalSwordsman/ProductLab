@@ -35,16 +35,15 @@ namespace WildB
 
             List<string> keys = new List<string>();
             
-            using (StreamReader st = new StreamReader("C:\\Users\\User\\Downloads\\Keys.txt"))
+            using (StreamReader st = new StreamReader("Keys.txt"))
             {
                 string line = string.Empty;
                 while ((line = st.ReadLine()) != null)
                 {
                     keys.Add(line);
                 }
-            }
+            }           
             
-            //string[] st = { "wsOne", "wstwo", "wsThree" };
 
             foreach (var k in keys)
             {
@@ -67,11 +66,7 @@ namespace WildB
                     tmp.Add(prod["id"].ToString());
                     tmp.Add(prod["feedbacks"].ToString());
                     tmp.Add(((Int32)prod["priceU"] / 100M).ToString());
-                    /*var id = prod["id"];
-                    var name = prod["name"];
-                    var brand = prod["brand"];
-                    var feedbacks = prod["feedbacks"];
-                    var price = (Int32)prod["priceU"] / 100M;*/
+                    
                     for (int j = 1; j < 6; j++) 
                     {
                         switch (k)
@@ -81,7 +76,7 @@ namespace WildB
                             case "Телефоны": wsThree.Rows[i + 1].Columns[j] = tmp[j - 1]; break;
                         }
                                                
-                        //Console.WriteLine($"{id} - {name} - {brand} - {feedbacks} - {price}"); 
+                        
                     }
                 }            
                 
